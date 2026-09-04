@@ -1,0 +1,40 @@
+# YKS2027 WEB - Flask Web Uygulaması Kütüphaneleri
+
+# Web Framework
+Flask==3.0.0
+Flask-SQLAlchemy==3.1.1
+Flask-Login==0.6.3
+Flask-WTF==1.2.1
+WTForms==3.1.1
+
+# Database
+SQLAlchemy>=2.0.0
+psycopg  # PostgreSQL için (yeni versiyon, wheel desteği)
+alembic==1.13.0  # Database migrations
+
+# Production Server
+gunicorn==21.2.0  # Linux/Unix için
+waitress==3.0.0  # Windows için production server
+Werkzeug==3.0.1
+
+# Feature Flags
+Flask-FeatureFlags==0.2
+
+# Monitoring
+sentry-sdk[flask]==1.38.0
+
+# Utilities
+python-dotenv==1.0.0
+email-validator==2.1.0
+openpyxl==3.1.2  # Excel dosyaları için
+
+# Frontend (HTMX + Alpine.js - CDN'den yüklenecek)
+# flask-htmx==1.0.0  # Opsiyonel
+
+# Test
+pytest==7.4.3
+pytest-flask==1.3.0
+
+# Security
+Flask-Limiter==3.5.0
+Flask-Talisman==1.1.0
