@@ -1,5 +1,6 @@
 # YKS2027 WEB - Dockerfile
 # Multi-stage build for production deployment
+# Multi-user support with Redis session storage
 
 # Stage 1: Build stage
 FROM python:3.11-slim as builder
@@ -45,6 +46,9 @@ ENV FLASK_DEBUG=False
 ENV PYTHONUNBUFFERED=1
 ENV PYTHONDONTWRITEBYTECODE=1
 
+# Redis configuration (for session storage and caching)
+ENV REDIS_URL=redis://localhost:6379/0
+
 # Expose port
 EXPOSE 5000
 
@@ -56,4 +60,5 @@ HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
     CMD python -c "import urllib.request; urllib.request.urlopen('http://localhost:5000/health')" || exit 1
 
 # Run with Waitress (Windows-compatible production server)
-CMD ["waitress-serve", "--host=0.0.0.0", "--port=5000", "app:create_app"]
+# Increased threads for multi-user support
+CMD ["waitress-serve", "--threads=8", "--host=0.0.0.0", "--port=5000", "app:create_app"]

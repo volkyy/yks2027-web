@@ -2,17 +2,25 @@
 
 Bu rehber, YKS2027 WEB uygulamasını production ortamında nasıl çalıştıracağınızı adım adım açıklar.
 
+**Multi-User Support:** Bu versiyon çoklu kullanıcı desteği ile gelmektedir:
+- ✅ Redis session storage (paylaşılan oturum yönetimi)
+- ✅ Redis caching (performans optimizasyonu)
+- ✅ Database connection pooling
+- ✅ Rate limiting (brute-force koruması)
+- ✅ CSRF protection
+
 ---
 
 ## 📋 İçindekiler
 
 1. [Hızlı Başlangıç](#hızlı-başlangıç)
-2. [Docker ile Deployment](#docker-ile-deployment)
-3. [Manuel Deployment](#manuel-deployment)
-4. [Bulut Platformları](#bulut-platformları)
-5. [Güvenlik Ayarları](#güvenlik-ayarları)
-6. [Performans Optimizasyonu](#performans-optimizasyonu)
-7. [Sorun Giderme](#sorun-giderme)
+2. [Multi-User Yapılandırması](#multi-user-yapılandırması)
+3. [Docker ile Deployment](#docker-ile-deployment)
+4. [Manuel Deployment](#manuel-deployment)
+5. [Bulut Platformları](#bulut-platformları)
+6. [Güvenlik Ayarları](#güvenlik-ayarları)
+7. [Performans Optimizasyonu](#performans-optimizasyonu)
+8. [Sorun Giderme](#sorun-giderme)
 
 ---
 
